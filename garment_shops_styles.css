@@ -1,0 +1,106 @@
+/* Add your CSS styles here */
+
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f0f0f0;
+}
+
+/* Header styles */
+header {
+  background-color: #000000;
+  color: #fff;
+  text-align: center;
+  padding: 20px 0;
+}
+
+header h1 {
+  font-size: 32px;
+  margin: 0;
+}
+
+/* Navigation styles */
+nav {
+  background-color: #5b5b5b;
+  color: #fff;
+  padding: 10px 0;
+  text-align: center;
+}
+
+nav ul {
+  list-style: none;
+  display: inline-block;
+  margin: 0;
+  padding: 0;
+}
+
+nav ul li {
+  display: inline-block;
+  margin: 0 10px;
+}
+
+nav ul li a {
+  color: #fff;
+  text-decoration: none;
+  padding: 8px 16px;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+nav ul li a:hover {
+  background-color: #555;
+}
+
+main {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+.container {
+  width: 300px;
+  height: 300px;
+  margin: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.map-container {
+  width: 100%;
+  height: 80%;
+  border-radius: 10px 10px 0 0;
+  overflow: hidden;
+}
+
+.map-container iframe {
+  width: 100%;
+  height: 100%;
+  border: 30pc;
+}
+
+button  {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  background-color: #000000;
+  color: #ffffff;
+  border: none;
+  border-radius: 0 0 10px 10px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #333333;
+}
+
+/* Footer styles */
+footer {
+  background-color: #000000;
+  color: #fff;
+  text-align: center;
+  padding: 40px 400px;
+}

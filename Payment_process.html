@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Secure Payment</title>
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      background-color: #000000; /* Dark Background Color */
+      color: #ecf0f1; /* Text Color */
+      margin: 0;
+      padding: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+    }
+
+    form {
+      background-color: #fff;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+      width: 300px;
+      text-align: center;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 10px;
+      color: #000000; /* Dark Text Color */
+      font-weight: bold;
+    }
+
+    input {
+      width: calc(100% - 20px);
+      padding: 10px;
+      margin-bottom: 20px;
+      box-sizing: border-box;
+      border: 1px solid #000000; /* Light Border Color */
+      border-radius: 5px;
+      font-size: 16px;
+    }
+
+    input[type="submit"] {
+      background-color: #000000; 
+      color: #fff;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    input[type="submit"]:hover {
+      background-color: #3f4040; 
+    }
+
+    .card-number {
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .card-number input {
+      width: calc(45% - 5px);
+    }
+
+    .btn {
+  padding: 12px 24px;
+  font-size: 16px;
+  border: none;
+  background-color: #000000; /* Button Color */
+  color: #fff;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+  background-color: #565758; /* Hover Color */
+}
+
+  </style>
+</head>
+<body>
+
+  <form id="payment-form">
+    <label for="card-number">Card Number</label>
+    <div class="card-number">
+      <input type="text" id="card-number-1" placeholder="1111" maxlength="4" required>
+      <input type="text" id="card-number-2" placeholder="2222" maxlength="4" required>
+      <input type="text" id="card-number-3" placeholder="3333" maxlength="4" required>
+      <input type="text" id="card-number-4" placeholder="4444" maxlength="4" required>
+    </div>
+
+    <label for="expiry-date">Expiry Date</label>
+    <input type="text" id="expiry-date" placeholder="MM/YY" maxlength="5" required>
+
+    <label for="cvv">CVV</label>
+    <input type="text" id="cvv" placeholder="321" maxlength="3" required>
+    <button class="btn" onclick="location.href= 'Payment_successful.html';">Pay Now</button>
+    
+  </form>
+
+  <script>
+    document.getElementById('card-number-1').addEventListener('input', function() {
+      if (this.value.length >= 4) {
+        document.getElementById('card-number-2').focus();
+      }
+    });
+
+    document.getElementById('card-number-2').addEventListener('input', function() {
+      if (this.value.length >= 4) {
+        document.getElementById('card-number-3').focus();
+      }
+    });
+
+    document.getElementById('card-number-3').addEventListener('input', function() {
+      if (this.value.length >= 4) {
+        document.getElementById('card-number-4').focus();
+      }
+    });
+  </script>
+
+</body>
+</html>

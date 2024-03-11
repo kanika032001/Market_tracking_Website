@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment_Form</title>
+    <link rel="stylesheet" href="Payment_form.css">
+</head>
+<body>
+    <div class="container">
+        <form action="" method="get">
+            <hr>
+            <h1 class="main_heading">PAYMENT FORM</h1>
+            <hr>
+            <p class="required">* Required Field</p>
+            <h2>User Information</h2>
+            <p>Name: <input type="text" name="name" placeholder="Sam Simon" required></p>
+            <fieldset>
+                <legend>Gender *</legend>
+                <p>
+                    Male <input type="radio" name="gender" id="Male"> 
+                    Female <input type="radio" name="gender" id="Female">
+                </p>
+            </fieldset>
+            <p>Address: <textarea name="Address" id="Address" cols="100" rows="4" placeholder="Enter your Address"></textarea></p>
+            <p>Email: <input type="email" name="email" id="email" required placeholder="simon@yahoomail.com"></p>
+            <p>Pincode: <input type="number" name="Pincode" id="Pincode" placeholder="304002" required></p>
+            <hr>
+                <button class="btn" onclick="location.href= 'Payment_process.html';">Proceed to Payment</button>
+            </p>
+        </form>
+    </div>
+</body>
+</html>

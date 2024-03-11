@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Garments Page</title>
+    <link rel="stylesheet" href="Electronic.css">
+    <!-- for cart icon -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    
+    <script>
+        window.sessionStorage.setItem("cart", "{}")
+        // Function to add items to the cart
+        function addToCart(ele) {
+            event.preventDefault();
+            var cart = JSON.parse(window.sessionStorage.getItem('cart'));
+            // console.log(ele["product"].value)
+            cart[ele["product"].value] = parseInt(ele['quantity'].value) * ele['price'].value
+            window.sessionStorage.setItem("cart", JSON.stringify(cart))
+            console.log(JSON.parse(window.sessionStorage.getItem('cart')))
+        }
+    </script>
+</head>
+<body>
+    <header>
+        <h1>Grocery Store</h1>
+    </header>
+
+    <!-- <nav>
+        <ul>
+            <li><a href="homepage.html">Home</a></li>
+            <li><a href="contact-me.html">Contact Us</a></li>
+        </ul>
+    </nav> -->
+
+
+    <div class="Shopping_cart">
+        <ul>
+          <li>
+            <a href="Market_cart.html">
+              <i class="fa fa-shopping-cart" aria-hidden="true"></i>
+            </a>
+          </li>
+        </ul>
+      </div>
+   
+
+<main>
+   <section class="featured-products">
+       <h2>Featured Products</h2>
+       <!-- Grocery section start -->
+       <div class="fashion_section">
+           <div id="main_slider" class="carousel slide" data-ride="carousel">
+               <div class="carousel-inner">
+                   <div class="carousel-item active">
+                       <div class="container">
+                           <h1 class="fashion_taital">Grocery Store</h1>
+                           <div class="row">
+                               <!-- Product 1 - Sugar --->
+                               <div class="col-lg-4 col-sm-4">
+                                   <div class="box_main">
+                                       <div class="tshirt_img">
+                                           <img src="images/sugar.jpg" alt="Sugar">
+                                       </div>
+                                       <h4 class="shirt_text">Sugar</h4>
+                                       <p class="price_text">Price  <span style="color: #262626;">Rs 270/Kg</span></p>
+                                       <div class="btn_main">
+                                        <form onsubmit="addToCart(this)">
+                                             <input type="hidden" id="product_id" name="product" value="Sugar">
+                                             <label for="quantity">Quantity:</label>
+                                             <input type="number"  id="quantity_id" name="quantity" value="1" min="1"> 
+                                             <input type="hidden" id="price_id" name="price" value=599>
+                                           <!-- <form action="{{ url_for('AddCart') }}" method="post"> -->
+                                           <!-- <input type="hidden" name="product_id" value="{{ product.id }}"> -->
+                                            <input type="submit" value="Add to Cart"></input>
+                                            
+
+                                           </form>
+                                       </div>
+                                   </div>
+                               </div>
+
+                               <!-- Product 2 - Rice-->
+                               <div class="col-lg-4 col-sm-4">
+                                   <div class="box_main">
+                                       <div class="tshirt_img">
+                                           <img src="images/rice.png" alt="Rice">
+                                       </div>
+                                       <h4 class="shirt_text">Daawat Rice</h4>
+                                       <p class="price_text">Price  <span style="color: #262626;">Rs 430/Kg</span></p>
+                                       <div class="btn_main">
+                                        <form onsubmit="addToCart(this)">
+                                             <input type="hidden" id="product_id" name="product" value="Daawat Rice">
+                                             <label for="quantity">Quantity:</label>
+                                             <input type="number" id="quantity_id" name="quantity" value="1" min="1"> 
+                                             <input type="hidden" id="price_id" name="price" value=899>
+                                          <!-- <form action="{{ url_for('AddCart') }}" method="post"> -->
+                                          <!-- <input type="hidden" name="product_id" value="{{ men_shirt_product.id }}"> -->
+                                                <input type="submit" value="Add to Cart"></input>
+                                             
+                                           </form>
+                                       </div>
+                                   </div>
+                               </div>
+
+                               <!-- Product 3 -Wheat Flour-->
+                               <div class="col-lg-4 col-sm-4">
+                                   <div class="box_main">
+                                       <div class="tshirt_img">
+                                           <img src="images/flour.jpg" alt="Wheat Flour">
+                                       </div>
+                                       <h4 class="shirt_text">Wheat Flour</h4>
+                                       <p class="price_text">Price  <span style="color: #262626;">Rs 550/Kg</span></p>
+                                       <div class="btn_main">
+                                          <form onsubmit="addToCart(this)">
+                                             <input type="hidden" id="product_id" name="product" value="Wheat Flour">
+                                             <label for="quantity">Quantity:</label>
+                                             <input type="number"  id="quantity_id" name="quantity" value="1" min="1">
+                                             <input type="hidden" id="price_id" name="price" value=999> 
+                                             <!-- <form action="{{ url_for('AddCart') }}" method="post"> -->
+                                             <!-- <input type="hidden" name="product_id" value="{{ dress_product.id }}"> -->
+                                             <input type="submit" value="Add to Cart"></input>
+                                             
+                                           </form>
+                                       </div>
+                                   </div>
+                               </div>
+                           </div>
+                       </div>
+                   </div>
+               </div>
+           </div>
+       </div>
+   </section>
+</main>
+
+
+    <footer>
+        <p>&copy; 2023 Grocery Store. All rights reserved.</p>
+    </footer>
+
+  
+</body>
+</html>

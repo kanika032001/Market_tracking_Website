@@ -1,0 +1,113 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Cart Page</title>
+    <link rel="stylesheet" href="Market_Cart.css">
+</head>
+<body>
+    <div class="container">
+        <div class="payment_details">
+            <h1>Payment Information</h1>
+            <div class="details_card">
+                <div class="name_address">
+                    <div class="first_lastName">
+                        <input type="text" placeholder="First Name" />
+                        <input type="text" placeholder="Last Name" />
+                    </div>
+                    <div class="address">
+                        <input type="text"  placeholder="Address" />
+                        <input type="number" placeholder="Pincode" />
+                        <input type="text" placeholder="Country" />
+                    </div>
+                </div>
+                <div class="proced_payment">
+                    <button class="btn" onclick="location.href= 'Payment_ Form.html';">Proceed to Payment Form</button>
+                </div>
+            </div>
+        </div>
+        <div class="order_summary">
+            <h1>Order Summary</h1>
+            <div class="summary_card" id="cartItems">
+                <!--Cart items will be dynamically added here-->
+                
+            </div>
+            
+        </div>
+    </div>
+
+    <script>
+        // JavaScript code for handling cart functionality
+        const cartItems = document.getElementById('cartItems');
+        
+        // Function to add items to the cart
+        function addToCart(productName, price) {
+            // Create a new div element to represent the cart item
+            const cartItem = document.createElement('div');
+            cartItem.classList.add('card_item');
+
+            // Create the content for the cart item
+            cartItem.innerHTML = `
+                <div class="product_img">
+                    <img src="${productName}.png" alt="">
+                </div>
+                <div class="product_info">
+                    <h1 id = "pointer_id" >${productName}</h1>
+                    <p>A Product from our Store</p>
+                    <div class="product_rate_info">
+                        <h1>Rs. ${price}</h1>
+                    </div>
+                </div>
+                <button class="remove_btn" onclick="removeFromCart(this)">Remove</button>
+                <hr />
+            `;
+
+            // Append the cart item to the cartItems div
+            cartItems.appendChild(cartItem);
+        }
+
+        // Function to remove items from the cart
+        function removeFromCart(item) {
+            item.parentElement.remove();
+            var rm_ele = item.parentNode.querySelector('#pointer_id').innerText
+            var cart = JSON.parse(window.sessionStorage.getItem('cart'));
+            delete cart[rm_ele]
+            window.sessionStorage.setItem("cart", JSON.stringify(cart))
+            location.reload();
+        }
+
+        function onload_cart()
+        {
+            var cart = JSON.parse(window.sessionStorage.getItem('cart'))
+            let total = 0
+            for (let key in cart) {
+                addToCart(key,cart[key]);
+                total = total+cart[key]
+            }
+            if(Object.entries(cart).length!=0)
+            {
+            let temp_div = document.createElement('div');
+            temp_div.innerHTML = 
+            `<div id="order_total">
+                    <div class="order_price">
+                        <p>Order summary</p>
+                        <h4>Rs. ${total}</h4>
+                      </div>
+                      <div class="order_service">
+                        <p>Additional Service</p>
+                        <h4>Rs.100</h4>
+                      </div>
+                      <div class="order_total">
+                        <p>Total Amount</p>
+                        <h4>Rs. ${total+100}</h4>
+                      </div>
+                </div>`
+                cartItems.appendChild(temp_div);
+            }
+
+        }
+
+        window.onload = onload_cart
+    </script>
+</body>
+</html>

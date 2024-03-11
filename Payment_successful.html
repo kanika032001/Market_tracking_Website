@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Payment Successful</title>
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      background-color: rgb(97, 147, 97); /* Background Color */
+      color:green; /* Text Color */
+      text-shadow:green;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+    }
+
+    .card-container {
+      background-color: rgba(141, 198, 141, 0.9); /* Transparent  Background */
+      border-radius: 10px;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+      padding: 40px;
+      text-align: center;
+      opacity: 0;
+      transform: translateY(20px);
+      animation: fadeInUp 2.8s forwards;
+    }
+
+    @keyframes fadeInUp {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .card-icon {
+      font-size: 64px;
+      margin-bottom: 20px;
+    }
+
+    h1 {
+      font-size: 24px;
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+
+    p {
+      margin-bottom: 20px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-md-6">
+        <div class="card-container">
+          <div class="card-icon">&#128179;</div>
+          <h1>Payment Successfully Completed!</h1>
+          <p>Thank you for shopping with us.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>

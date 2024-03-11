@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Login Page</title>
+    <style>
+        body {
+            font-family: Calibri, Helvetica, sans-serif;
+            background-color: #000000;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        button {
+            background-color: #333;
+            width: 100%;
+            color: #fff;
+            padding: 15px;
+            margin: 10px 0px;
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        form {
+            border: 3px solid #353532;
+            background-color: #fff;
+            max-width: 400px;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+        }
+
+        input[type=text], input[type=password] {
+            width: 100%;
+            margin: 8px 0;
+            padding: 12px 20px;
+            display: inline-block;
+            border: 1px solid #ccc;
+            box-sizing: border-box;
+            border-radius: 5px;
+        }
+
+        input[type=text]:focus, input[type=password]:focus {
+            border: 1px solid #212121;
+        }
+
+        button:hover {
+            background-color: #000000;
+        }
+
+        .cancelbtn {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            background-color: #bbb;
+            color: #000000;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .cancelbtn:hover {
+            background-color: #aaa;
+        }
+
+        .container {
+            padding: 25px;
+        }
+
+        h1 {
+            margin-bottom: 20px;
+            color: #000000;
+        }
+
+        a {
+            text-decoration: none;
+            color: #000000;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <form action="http://3.86.165.228/cgi-bin/database.py" method="POST">
+        <div class="container">
+            <center><h1>MEMBER LOGIN</h1></center>
+            <label>Email or Phone Number:</label>
+            <input type="text" placeholder="Enter your E-Mail or Phone Number" name="emailid" required>
+            <label>Password:</label>
+            <input type="password" placeholder="Enter Password" name="password" required>
+            <input type="submit" value="submit">
+            <!-- <button type="button" class="btn" value="Login" onclick="location.href= 'homepage.html';">LOGIN</button> -->
+            <input type="checkbox" checked="checked"> Remember me
+            <button type="button" class="cancelbtn">Cancel</button>
+            <p>Forgot <a href="#">password?</a></p>
+        </div>
+    </form>
+</body>
+</html>
