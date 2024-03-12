@@ -1,0 +1,83 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Cart Page</title>
+    <link rel="stylesheet" href="Market_Cart.css">
+</head>
+<body>
+    <div class="container">
+        <div class="payment_details">
+            <h1>Payment Information</h1>
+            <div class="details_card">
+                <div class="name_address">
+                    <div class="first_lastName">
+                        <input type="text" placeholder="First Name" />
+                        <input type="text" placeholder="Last Name" />
+                    </div>
+                    <div class="address">
+                        <input type="text"  placeholder="Address" />
+                        <input type="number" placeholder="Pincode" />
+                        <input type="text" placeholder="Country" />
+                    </div>
+                </div>
+                <div class="proced_payment">
+                    <a href="Payment_Form.html">Proceed to payment</a>
+                </div>
+            </div>
+        </div>
+        <div class="order_summary">
+            <h1>Order Summary</h1>
+            <div class="summary_card" id="cartItems">
+                <!-- Cart items will be dynamically added here -->
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // JavaScript code for handling cart functionality
+        const cartItems = document.getElementById('cartItems');
+
+        // Function to add items to the cart
+        function addToCart(productName, price) {
+            // Create a new div element to represent the cart item
+            const cartItem = document.createElement('div');
+            cartItem.classList.add('card_item');
+
+            // Create the content for the cart item
+            cartItem.innerHTML = `
+                <div class="product_img">
+                    <img src="women-clothes-img.png" alt="">
+                </div>
+                <div class="product_info">
+                    <h1>${productName}</h1>
+                    <p>Polka dots Swing Red Dress</p>
+                    <div class="product_rate_info">
+                        <h1>Rs. ${price}</h1>
+                    </div>
+                </div>
+                <button class="remove_btn" onclick="removeFromCart(this)">Remove</button>
+                <hr />
+            `;
+
+            // Append the cart item to the cartItems div
+            cartItems.appendChild(cartItem);
+        }
+
+        // Function to remove items from the cart
+        function removeFromCart(item) {
+            item.parentElement.remove();
+        }
+
+        function onload_cart()
+        {
+            var cart = JSON.parse(window.sessionStorage.getItem('cart'))
+            for (let key in cart) {
+                addToCart(key,cart[key]);
+            }
+        }
+
+        window.onload = onload_cart
+    </script>
+</body>
+</html>

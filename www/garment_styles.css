@@ -1,0 +1,180 @@
+body, h1, h2, h3, h4, h5, h6, p {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+}
+
+/* Header styles */
+header {
+    background-color: #000000;
+    color: #fff;
+    text-align: center;
+    padding: 20px 0;
+    font-size: 24px;
+}
+
+/* Navigation styles */
+nav {
+    background-color: #333;
+    color: #fff;
+    padding: 10px 0;
+    text-align: center;
+}
+
+nav ul {
+    list-style: none;
+    display: inline-block;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline-block;
+    margin: 0 10px;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+nav ul li a:hover {
+    background-color: #555;
+}
+
+/* Main content styles */
+main {
+    padding: 20px;
+}
+
+h2 {
+    border-bottom: 2px solid #000000;
+    padding-bottom: 5px;
+    font-size: 28px;
+    margin-bottom: 20px;
+}
+
+.Shopping_cart {
+    display: flex;
+    text-align: left;
+    float: left;
+  }
+  
+  .Shopping_cart ul {
+    margin-top: -110px;
+    margin-left: -10px;
+    padding: 0px;
+  }
+  
+  .Shopping_cart li {
+    float: left;
+    font-size: 30px;
+    color: #ffffff;
+    padding-left: 30px;
+    padding-top: 45px;
+  }
+  
+  .Shopping_cart li a {
+    color: #ffffff;
+  }
+/* Featured products section styles */
+.featured-products {
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.fashion_section {
+    background-color: #f2f2f2;
+    padding: 20px;
+}
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.box_main {
+    background-color: #fff;
+    padding: 0px;
+    margin: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    flex-basis: calc(33.3333% - 20px);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+/* Image Container */
+.tshirt_img {
+    position: relative;
+    overflow: hidden;
+    border-radius: 5px;
+}
+
+.tshirt_img img {
+    width: 100%;
+    height: 500px; /* Fix the image height */
+    object-fit: cover;
+    transition: transform 0.2s ease;
+}
+
+/* Image Hover Effect */
+.tshirt_img::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.3);
+    opacity: 0;
+    transition: opacity 0.2s ease;
+}
+
+.tshirt_img:hover::before {
+    opacity: 1;
+}
+
+.tshirt_img:hover img {
+    transform: scale(1.1);
+}
+
+.shirt_text {
+    margin-bottom: 10px;
+    font-size: 18px;
+}
+
+.price_text {
+    color: #262626;
+    font-size: 16px;
+}
+
+.btn_main {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+.btn_main button {
+    width: 100%;
+    padding: 8px;
+    background-color: #000000;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+}
+
+
+/* Footer styles */
+footer {
+    background-color: #000000;
+    color: #fff;
+    text-align: center;
+    padding: 10px 0;
+}
